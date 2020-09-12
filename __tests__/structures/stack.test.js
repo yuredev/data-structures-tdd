@@ -1,4 +1,4 @@
-import Stack from '../structures/stack';
+import Stack from '../../structures/stack';
 
 let stack;
 
