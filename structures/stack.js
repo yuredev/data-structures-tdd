@@ -4,11 +4,11 @@ export default class Stack {
     this.stack = [];
     this.maxSize = maxSize;
   }
-  push(newData) {
+  push(element) {
     if (this.isFull()) {
       throw new Error('Stack Overflow');
     }
-    this.stack[++this.topIndex] = newData;
+    this.stack[++this.topIndex] = element;
   }
   pop() {
     if (this.isEmpty()) {
@@ -22,7 +22,6 @@ export default class Stack {
     }
     return this.stack[this.topIndex];
   }
-
   toString() {
     let string = '['; 
     for (let i = 0; i <= this.topIndex; i++) {

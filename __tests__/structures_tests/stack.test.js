@@ -11,9 +11,9 @@ test('Stack push test', () => {
   stack.push('A');
   stack.push('D');
   stack.push('S');
-  expect(stack.toString()).toBe('[T, A, D, S]');
-  stack.push(';');
-  expect(stack.toString()).toBe('[T, A, D, S, ;]');
+  expect(stack.toString()).toBe('[T,A,D,S]');
+  stack.push('UFRN');
+  expect(stack.toString()).toBe('[T,A,D,S,UFRN]');
 });
 
 test('Stack pop test', () => {
@@ -22,9 +22,9 @@ test('Stack pop test', () => {
   stack.push('D');
   stack.push('S');
   stack.pop();
-  expect(stack.toString()).toBe('[T, A, D]');
+  expect(stack.toString()).toBe('[T,A,D]');
   stack.pop();
-  expect(stack.toString()).toBe('[T, A]');
+  expect(stack.toString()).toBe('[T,A]');
   expect(stack.pop()).toBe('A');
   expect(stack.toString()).toBe('[T]');
   expect(stack.pop()).toBe('T');

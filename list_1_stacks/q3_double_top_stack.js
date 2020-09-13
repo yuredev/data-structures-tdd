@@ -44,7 +44,7 @@ export default class DoubleTopStack {
   sizeB() {
     return this.maxSize - this.topIndexB;
   }
-  elementsA() {
+  toStringA() {
     let string = '[';
     for (let i = 0; i <= this.topIndexA; i++) {
       string += this.elements[i];
@@ -53,7 +53,7 @@ export default class DoubleTopStack {
     string += ']';
     return string;
   }
-  elementsB() {
+  toStringB() {
     let string = '[';
     for (let i = this.maxSize - 1; i >= this.topIndexB; i--) {
       string += this.elements[i];

@@ -1,4 +1,4 @@
-import DoubleTopStack from '../../list_1/q3_double_top_stack';
+import DoubleTopStack from '../../list_1_stacks/q3_double_top_stack';
 
 let doubleTopStack;
 
@@ -8,17 +8,17 @@ beforeEach(() => {
 
 test('DoubleTopStack push test', () => {
   doubleTopStack.pushA('A');
-  expect(doubleTopStack.elementsA()).toBe(
+  expect(doubleTopStack.toStringA()).toBe(
     '[A]'
   );
   doubleTopStack.pushA('B');
   doubleTopStack.pushA('C');
-  expect(doubleTopStack.elementsA()).toBe(
+  expect(doubleTopStack.toStringA()).toBe(
     '[A,B,C]'
   );
   doubleTopStack.pushB('1');
   doubleTopStack.pushB('2');
-  expect(doubleTopStack.elementsB()).toBe(
+  expect(doubleTopStack.toStringB()).toBe(
     '[1,2]'
   );
 });
@@ -31,22 +31,22 @@ test('DoubleTopStack pop test', () => {
   doubleTopStack.pushA('5');
   expect(doubleTopStack.popA()).toBe('5');
   doubleTopStack.popA();
-  expect(doubleTopStack.elementsA()).toBe(
+  expect(doubleTopStack.toStringA()).toBe(
     '[1,2,3]'
   );
   doubleTopStack.popA();
-  expect(doubleTopStack.elementsA()).toBe(
+  expect(doubleTopStack.toStringA()).toBe(
     '[1,2]'
   );
   doubleTopStack.pushB('A');
   doubleTopStack.pushB('B');
   doubleTopStack.pushB('C');
   expect(doubleTopStack.popB()).toBe('C');
-  expect(doubleTopStack.elementsB()).toBe(
+  expect(doubleTopStack.toStringB()).toBe(
     '[A,B]'
   );
   doubleTopStack.popB();
-  expect(doubleTopStack.elementsB()).toBe(
+  expect(doubleTopStack.toStringB()).toBe(
     '[A]'
   );
 });

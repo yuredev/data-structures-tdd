@@ -1,4 +1,4 @@
-import invertString from '../../list_1/q2_invert_string_with_stack';
+import invertString from '../../list_1_stacks/q2_invert_string_with_stack';
 
 test('Invert string test', () => {
   expect(invertString('YURE')).toBe('ERUY');
