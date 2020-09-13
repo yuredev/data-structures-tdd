@@ -1,4 +1,4 @@
-import Stack from '../../structures/stack';
+import Stack from '../structures/stack';
 
 export default (string) => {
   const stack = new Stack(string.length);

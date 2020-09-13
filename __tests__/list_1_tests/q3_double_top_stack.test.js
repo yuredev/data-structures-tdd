@@ -1,4 +1,4 @@
-import DoubleTopStack from '../../lists/list_1/q3_double_top_stack';
+import DoubleTopStack from '../../list_1/q3_double_top_stack';
 
 let doubleTopStack;
 

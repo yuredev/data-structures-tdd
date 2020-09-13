@@ -1,4 +1,4 @@
-import Fraction from '../../lists/list_1/q1_fraction';
+import Fraction from '../../list_1/q1_fraction';
 
 let fraction;
 
