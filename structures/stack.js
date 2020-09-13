@@ -24,15 +24,15 @@ export default class Stack {
   }
 
   toString() {
-    let stringToPrint = '['; 
+    let string = '['; 
     for (let i = 0; i <= this.topIndex; i++) {
-      stringToPrint += this.stack[i];
+      string += this.stack[i];
       if (i < this.topIndex) {
-        stringToPrint += ', ';
+        string += ',';
       }
     }
-    stringToPrint += ']'; 
-    return stringToPrint;
+    string += ']'; 
+    return string;
   }
   clear() {
     this.topIndex = -1;
