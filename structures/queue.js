@@ -37,7 +37,6 @@ export default class Queue {
   }
   toString() {
     let result = '[';
-    const queueLength = this.length();
     for (let i = this.beginning; i < this.end; i++) {
       result += this.elements[i];
       result += i < this.end - 1 ? ',' : '';
