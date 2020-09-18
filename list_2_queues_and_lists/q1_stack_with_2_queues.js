@@ -1,19 +1,5 @@
 import Queue from '../structures/queue';
 
-
-/** 
- * Transfers the elements from a origin queue to a 
- * destination queue until the origin queue have 1 element
- * @param {Queue} origin The Queue that will be reduced 
- * @param {Queue} destiny The Queue that will 
- * receive the elements of the origin Queue
- */
-function transferQueue(origin, destiny) {
-  while (origin.length() > 1) {
-    destiny.enqueue(origin.dequeue());
-  }
-}
-
 class StackWith2Queues {
   constructor(maxSize = 8) {
     this.queues = {
@@ -74,6 +60,19 @@ class StackWith2Queues {
   }
   isFull() {
     return this.queues.bigger.isFull();
+  }
+}
+
+/** 
+ * Transfers the elements from a origin queue to a 
+ * destination queue until the origin queue have 1 element
+ * @param {Queue} origin The Queue that will be reduced 
+ * @param {Queue} destiny The Queue that will 
+ * receive the elements of the origin Queue
+ */
+function transferQueue(origin, destiny) {
+  while (origin.length() > 1) {
+    destiny.enqueue(origin.dequeue());
   }
 }
 
