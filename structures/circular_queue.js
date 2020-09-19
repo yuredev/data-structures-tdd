@@ -55,13 +55,4 @@ export default class CircularQueue {
     result += ']';
     return result;
   }
-  literalToString() {
-    let result = '[';
-    for (let i = 0; i <= this.maxSize; i++) {
-      result += this.elements[i] ? this.elements[i] : '-';
-      result += i < this.maxSize ? ',' : '';
-    }
-    result += ']';
-    return result;
-  }
 }

@@ -4,18 +4,6 @@ let queue;
 
 beforeEach(() => queue = new CircularQueue(8));
 
-test('Queue Circularity test', () => {
-  const q = new CircularQueue(6);  
-  q.enqueue('A');
-  expect(q.literalToString()).toBe('[-,A,-,-,-,-,-]');
-  q.enqueue('B');
-  expect(q.length()).toBe(2);
-  q.enqueue('C');
-  expect(q.literalToString()).toBe('[-,A,B,C,-,-,-]');
-  q.enqueue('D');
-  expect(q.literalToString()).toBe('[-,A,B,C,D,-,-]');
-});
-
 test('Queue enqueue test', () => {
   queue.enqueue('A');
   expect(queue.toString()).toBe('[A]');
@@ -83,9 +71,7 @@ test('Queue sizes test', () => {
   queue.enqueue('#');
   queue.enqueue('#');
   expect(queue.length()).toBe(7);
-  console.log(queue.literalToString());
   queue.enqueue('#');
-  console.log(queue.literalToString());
   expect(queue.length()).toBe(8);
   expect(queue.isFull()).toBe(true);
   queue.dequeue();
