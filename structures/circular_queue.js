@@ -39,6 +39,9 @@ export default class CircularQueue {
     return this.end - this.beginning;
   }
   front() {
+    if (this.isEmpty()) {
+      throw new Error('Empty Queue');
+    }
     return this.elements[this.beginning];
   }
   clear() {
