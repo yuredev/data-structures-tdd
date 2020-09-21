@@ -2,7 +2,6 @@ import Queue from '../structures/queue';
 
 class StackWith2Queues {
   constructor(maxSize = 8) {
-    this.maxSize = maxSize;
     this.queues = {
       q1: new Queue(maxSize),
       q2: new Queue(maxSize),
