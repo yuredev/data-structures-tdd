@@ -23,6 +23,7 @@ export default class Stack {
     return this.stack[this.topIndex];
   }
   toString() {
+    console.log('top: ', this.topIndex);
     let string = '['; 
     for (let i = 0; i <= this.topIndex; i++) {
       string += this.stack[i];
