@@ -1,5 +1,5 @@
 import Queue from '../../structures/queue';
-import mergeQueues from '../../list_2_queues_and_lists/q3_merge_queues';
+import mergeQueues from '../../list_2_queues_and_lists/q4_merge_queues';
 
 test('Merge queues test', () => {
   const queue1 = new Queue(10);
