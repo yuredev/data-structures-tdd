@@ -1,4 +1,4 @@
-import Stack from '../../list_2_queues_and_lists/q1_stack_with_2_queues';
+import Stack from '../../list_2_queues/q1_stack_with_2_queues';
 
 let stack;
 
