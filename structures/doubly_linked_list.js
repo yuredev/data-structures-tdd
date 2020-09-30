@@ -33,7 +33,66 @@ class DoublyLinkedList {
       this.tail = newNode;
     }
   }
-  addAt() {}
+  addAt(element, position) {
+    const newNode = new Node(element);
+    const size = this.length();
+    if (position >= size) {
+      this.append(element);
+      return;
+    } 
+    if (position <= 0) {
+      this.add(element);
+      return;
+    }
+    let current;
+    if (isSmallerThanHalf(position, size - 1)) {
+      current = this.head;
+      // head to tail iteration
+      for (let i = 0; i < position; i++) {
+        current = current.next;
+      }
+    } else {
+      current = this.tail;
+      // tail to head iteration
+      for (let i = size - 1; i > position; i--) {
+        current = current.previous;
+      }
+    }
+    newNode.previous = current.previous;
+    current.previous.next = newNode;
+    newNode.next = current;
+    current.previous = newNode;
+  }
+  removeAt(position) {
+    const size = this.length();
+    if (position >= size || position < 0) {
+      throw new Error('Invalid Index to Remove');
+    } 
+    if (position === 0) {
+      this.removeFirst();
+      return;
+    }
+    if (position === this.length() - 1) {
+      this.removeLast();
+      return;
+    }
+    let current;
+    if (isSmallerThanHalf(position, size - 1)) {
+      current = this.head;
+      // head to tail iteration
+      for (let i = 0; i < position; i++) {
+        current = current.next;
+      }
+    } else { 
+      current = this.tail;
+      // tail to head iteration
+      for (let i = size - 1; i > position; i--) {
+        current = current.previous;
+      }  
+    }
+    current.previous.next = current.next;
+    current.next.previous = current.previous;
+  }
   clear() {
     this.head = this.tail = null;
   }
@@ -61,40 +120,19 @@ class DoublyLinkedList {
         this.head.previous = null;
     }
   }
-  removeAt(position) {
-    const size = this.length();
-    if (position >= size || position < 0) {
-      throw new Error('Invalid Index to Remove');
-    } 
-    if (position === 0) {
-      this.removeFirst();
-      return;
-    }
-    if (position === this.length() - 1) {
-      this.removeLast();
-      return;
-    }
-    let current;
-    if (isSmallerThanHalf(position, size)) {
-      current = this.head;
-      // head to tail iteration
-      for (let i = 0; i < position; i++) {
-        current = current.next;
-      }
-    } else { 
-      current = this.tail;
-      // tail to head iteration
-      for (let i = this.length() - 1; i > position; i--) {
-        current = current.previous;
-      }  
-    }
-    current.previous.next = current.next;
-    current.next.previous = current.previous;
-  }
   isEmpty() {
     return this.length() === 0;
   }
-  search() {}
+  search(element) {
+    let current = this.head;
+    while (current !== null) {
+      if (current.data === element) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false
+  }
   length() {
     let count = 0;
     let current = this.head;

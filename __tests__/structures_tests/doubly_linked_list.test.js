@@ -27,6 +27,41 @@ test('DoublyLinkedList append test', () => {
   expect(list.toString()).toBe('[1,2,3,4]');
 });
 
+test('DoublyLinkedList addAt test', () => {
+  const list = new DoublyLinkedList();
+  list.append('T');
+  list.append('A');
+  list.append('S');
+  list.addAt('D', 2);
+  expect(list.toString()).toBe(
+    '[T,A,D,S]'
+  );
+  list.addAt('_', -10);
+  expect(list.toString()).toBe(
+    '[_,T,A,D,S]'
+  );
+  list.addAt('_', 40);
+  expect(list.toString()).toBe(
+    '[_,T,A,D,S,_]'
+  );
+  list.addAt('>', 5);
+  list.addAt('/', 5);
+  list.addAt('<', 5);
+  expect(list.toString()).toBe(
+    '[_,T,A,D,S,<,/,>,_]'
+  );
+  list.addAt('J', 1);
+  list.addAt('A', 1);
+  list.addAt('E', 1);
+  expect(list.toString()).toBe(
+    '[_,E,A,J,T,A,D,S,<,/,>,_]'
+  );
+  list.addAt('_', 4);
+  expect(list.toString()).toBe(
+    '[_,E,A,J,_,T,A,D,S,<,/,>,_]'
+  );
+});
+
 test('DoublyLinkedList add and append merged test', () => {
   const list = new DoublyLinkedList();
   expect(list.toString()).toBe('[]');
@@ -176,4 +211,26 @@ test('DoublyLinkedList removeAt test', () => {
   expect(list.toString()).toBe(
     '[]'
   );
+  expect(() => {
+    list.removeAt(3);
+  }).toThrowError('Invalid Index to Remove');
+  expect(() => {
+    list.removeAt(-2);
+  }).toThrowError('Invalid Index to Remove');
 })
+
+test('DoublyLinkedList search test', () => {
+  const list = new DoublyLinkedList();
+  expect(list.search(20)).toBe(false);
+  list.add(20);
+  expect(list.search(20)).toBe(true);
+  const worldChampions = new DoublyLinkedList();
+  worldChampions.append('Corinthians');
+  worldChampions.append('Barcelona');
+  worldChampions.append('Liverpool');
+  worldChampions.append('Real Madrid');
+  expect(worldChampions.search('Palmeiras')).toBe(false);
+  expect(worldChampions.search('Chelsea')).toBe(false);
+  expect(worldChampions.search('Corinthians')).toBe(true);
+  expect(worldChampions.search('Barcelona')).toBe(true);
+});
