@@ -58,6 +58,19 @@ class List {
     currentNode.next = currentNode.next.next;
     return removedElementData;
   }
+  get(index) {
+    if (this.isEmpty()) {
+      throw new Error('There are no elements in the list');
+    } 
+    if (index >= this.length()) {
+      throw new Error('Invalid index to get');
+    }
+    let current = this.head;
+    for (let i = 0; i <= index; i++) {
+      current = current.next;
+    }
+    return current.data;
+  }
   search(element) {
     if (this.isEmpty()) {
       return false;
