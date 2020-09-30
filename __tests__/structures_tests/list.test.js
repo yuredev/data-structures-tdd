@@ -152,6 +152,22 @@ test('List sizes test', () => {
   expect(list.length()).toBe(6);  
 });
 
+test('List get test', () => {
+  list.append(10);
+  list.append(20);
+  list.append(30);
+  list.append(40);
+  list.append(50);
+  list.append(60);
+  list.append(70);
+  expect(list.get(0)).toBe(10);
+  expect(list.get(1)).toBe(20);
+  expect(list.get(2)).toBe(30);
+  expect(list.get(3)).toBe(40);
+  expect(list.get(6)).toBe(70);
+});
+
+
 test('List search test', () => {
   expect(list.search(20)).toBe(false);
   list.add(20);
