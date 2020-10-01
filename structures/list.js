@@ -39,6 +39,9 @@ class List {
     newNode.next = currentNode.next;
     currentNode.next = newNode;
   }
+  getHead() {
+    return this.head;
+  }
   removeAt(index) {
     if (index >= this.length() || index < 0) {
       throw new Error('Invalid Index to Remove');
