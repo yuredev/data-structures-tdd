@@ -151,6 +151,16 @@ class DoublyLinkedList {
     }
     return result + ']';
   }
+  asArray() {
+    const array = [];
+		let current = this.head;
+    let i = 0;
+		while (current != null) {
+      array[i++] = current.data;
+			current = current.next;
+		}
+		return array;
+	}
 }
 
 function isSmallerThanHalf(number, total) {
