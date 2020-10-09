@@ -234,3 +234,12 @@ test('DoublyLinkedList search test', () => {
   expect(worldChampions.search('Corinthians')).toBe(true);
   expect(worldChampions.search('Barcelona')).toBe(true);
 });
+
+test('DoublyLinkedList asArray test', () => {
+  const list = new DoublyLinkedList();
+  list.append(10);
+  list.append(2);
+  list.append(33);
+  list.append(15);
+  expect(list.asArray()).toStrictEqual([10, 2, 33, 15]); 
+});
